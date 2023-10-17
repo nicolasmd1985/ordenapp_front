@@ -1,0 +1,33 @@
+<template>
+
+    <!-- Background image -->
+    <div
+    class="p-5 text-center bg-image"
+    style="
+    background-image: url('https://mdbootstrap.com/img/new/slides/041.webp');
+    height: 600px;
+    "
+    >
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-white">
+            <h1 class="mb-3">Heading</h1>
+            <h4 class="mb-3">Subheading</h4>
+            <MDBBtn tag="a" lg outline="light"
+              href="#!"
+              role="button"
+              >Call to action
+            </MDBBtn>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!-- Background image -->
+</template>
+
+
+<script setup lang="ts">
+  import {
+    MDBBtn,
+  } from 'mdb-vue-ui-kit';
+</script>
