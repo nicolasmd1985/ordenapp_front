@@ -19,5 +19,10 @@ export default defineNuxtConfig({
     transpile: ["mdb-vue-ui-kit"],
   },
   plugins: [{ src: '@/plugins/aos', mode: 'client' }],
-  devtools: { enabled: true }
+  devtools: { enabled: true },
+  components: [
+    // ~/calendar-module/components/event/Update.vue => <EventUpdate />
+    { path: '~/components/Landing' },
+    '~/components'
+  ]
 })

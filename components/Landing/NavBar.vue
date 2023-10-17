@@ -26,7 +26,7 @@
         </MDBNavbarNav>
       </MDBCollapse>
     </MDBNavbar>
-  </template>
+</template>
 
 <script setup lang="ts">
     import {
@@ -46,4 +46,5 @@
 
     const collapse1 = ref(false);
     const dropdown1 = ref(false);
+
 </script>

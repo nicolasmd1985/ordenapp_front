@@ -1,12 +1,9 @@
+<script lang="ts" >
+  
+</script>
+
 <template>
-    <div>
-        <header>
-            <NavBar />
-            <VideoIntro/>
-            <FirstFrame/>
-            <SecondFrame/>
-            <FeatureFrame/>
-            <Footer/>
-        </header>
-    </div>
-  </template>
+  <!-- <NavBar/> -->
+</template>
+
+  
