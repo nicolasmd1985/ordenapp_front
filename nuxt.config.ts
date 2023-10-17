@@ -18,5 +18,6 @@ export default defineNuxtConfig({
   build: {
     transpile: ["mdb-vue-ui-kit"],
   },
+  plugins: [{ src: '@/plugins/aos', mode: 'client' }],
   devtools: { enabled: true }
 })
