@@ -36,11 +36,11 @@
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <div class="view overlay h-auto">
           <img src="~/assets/images/logo-fondo-emprender.png" class="d-inline" alt="Fondo Emprender SENA">
-          <a href="http://www.fondoemprender.com/SitePages/Home.aspx" target="_blank" class="mask rgba-white-slight"></a>
+          <!-- <a href="http://www.fondoemprender.com/SitePages/Home.aspx" target="_blank" class="mask rgba-white-slight"></a> -->
         </div>
         <div class="view overlay h-auto mt-4">
           <img src="~/assets/images/logo-presidencia-republica.png" class="d-inline logo-presi" alt="Presidencia de la República de Colombia">
-          <a href="https://id.presidencia.gov.co/Paginas/presidenciaco.aspx" target="_blank" class="mask rgba-white-slight"></a>
+          <!-- <a href="https://id.presidencia.gov.co/Paginas/presidenciaco.aspx" target="_blank" class="mask rgba-white-slight"></a> -->
         </div>
       </div>
       <div class="col-md-4">

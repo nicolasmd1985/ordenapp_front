@@ -4,12 +4,12 @@
         <div class="row align-items-center">
           <div class="col-md-6">
             <div class="content-img content-img-group-1">
-              <div class="image-1 d-none d-md-block" data-aos="fade-left" data-aos-duration="1500">
-                  <img src="~/assets/images/pantalla1.png" style: height= "250px" class="valign-wrapper" alt="Discover Nuxt 3" />
-              </div>
-              <div class="image-1 d-none d-md-block" data-aos="fade-right" data-aos-duration="1500">
-                  <img src="~/assets/images/pantalla2.png" style: height= "250px" class="valign-wrapper" alt="Discover Nuxt" />
-              </div>
+              <!-- <div class="image-1 d-none d-md-block" data-aos="fade-left" data-aos-duration="1500"> -->
+                  <img src="~/assets/images/pantalla1.png" style: height= "250px" class="valign-wrapper" alt="p1" />
+              <!-- </div> -->
+              <!-- <div class="image-1 d-none d-md-block" data-aos="fade-right" data-aos-duration="1500"> -->
+                  <img src="~/assets/images/pantalla2.png" style: height= "250px" class="valign-wrapper" alt="p2" />
+              <!-- </div> -->
             </div>
           </div>
           <div class="col-md-6">

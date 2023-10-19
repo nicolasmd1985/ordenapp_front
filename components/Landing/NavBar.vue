@@ -1,13 +1,13 @@
 <template>
     <MDBNavbar expand="lg" light bg="light" container>
-      <MDBNavbarBrand href="#">
+      <NuxtLink to="/">
         <img
           src="~/assets/images/logo-03.png"
           height="80"
           alt=""
           loading="lazy"
         />  
-      </MDBNavbarBrand>
+      </NuxtLink>
       <MDBNavbarToggler
         @click="collapse1 = !collapse1"
         target="#navbarSupportedContent"
@@ -17,10 +17,10 @@
           <MDBNavbarItem to="#" active>
             Plans
           </MDBNavbarItem>
-          <MDBNavbarItem href="#">
+          <MDBNavbarItem to="/register">
             Create Account
           </MDBNavbarItem>
-          <MDBNavbarItem to="#">
+          <MDBNavbarItem to="/login">
             Login
           </MDBNavbarItem>
         </MDBNavbarNav>

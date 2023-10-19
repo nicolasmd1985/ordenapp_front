@@ -5,7 +5,7 @@
     class="p-5 text-center bg-image"
     style="
     background-image: url('https://mdbootstrap.com/img/new/slides/041.webp');
-    height: 600px;
+    height: 1000px;
     "
     >
     <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">

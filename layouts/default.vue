@@ -5,11 +5,7 @@
   <div>
     <header>
       <NavBar/>
-      <VideoIntro/>
-      <FirstFrame/>
-      <SecondFrame/>
-      <FeatureFrame/>
-      <Footer/>
+      <slot/>
     </header>
   </div>
 

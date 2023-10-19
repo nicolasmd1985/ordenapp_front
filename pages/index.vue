@@ -3,7 +3,11 @@
 </script>
 
 <template>
-  <!-- <NavBar/> -->
+  <VideoIntro/>
+  <FirstFrame/>
+  <SecondFrame/>
+  <FeatureFrame/>
+  <Footer/>
 </template>
 
   
