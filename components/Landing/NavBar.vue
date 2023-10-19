@@ -19,6 +19,7 @@
           </MDBNavbarItem>
           <MDBNavbarItem to="/register">
             Create Account
+            <!-- <div><p>{{ authStore }}</p></div> -->
           </MDBNavbarItem>
           <MDBNavbarItem to="/login">
             Login
@@ -26,9 +27,19 @@
         </MDBNavbarNav>
       </MDBCollapse>
     </MDBNavbar>
+    
 </template>
 
-<script setup lang="ts">
+<script setup >
+
+
+  // import { useAuthStore } from '~/store/auth'
+  // const authStore = useAuthStore;
+
+  //   // import { useAuthStore } from "~/stores/auth";
+  //   // const authStore = useAuthStore();
+  //   // const { user, isLoggedIn } = storeToRefs(authStore);
+  //   await authStore.
     import {
     MDBBtn,
     MDBNavbar,

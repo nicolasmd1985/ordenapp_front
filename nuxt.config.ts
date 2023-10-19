@@ -1,5 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  modules: [
+    // ...
+    '@pinia/nuxt'
+  ],
   app:{
     head: {
       link: [
@@ -24,5 +28,6 @@ export default defineNuxtConfig({
     // ~/calendar-module/components/event/Update.vue => <EventUpdate />
     { path: '~/components/Landing' },
     '~/components'
-  ]
+  ],
+
 })
