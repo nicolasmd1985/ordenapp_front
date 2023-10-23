@@ -14,7 +14,7 @@
       ></MDBNavbarToggler>
       <MDBCollapse v-model="collapse1" id="navbarSupportedContent">
         <MDBNavbarNav right class="mb-2 mb-lg-0">
-          <MDBNavbarItem to="#" active>
+          <MDBNavbarItem to="/plans" active>
             Plans
           </MDBNavbarItem>
           <MDBNavbarItem to="/register">

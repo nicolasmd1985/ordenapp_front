@@ -2,7 +2,8 @@
 export default defineNuxtConfig({
   modules: [
     // ...
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    'nuxt-graphql-client'
   ],
   app:{
     head: {
@@ -29,5 +30,10 @@ export default defineNuxtConfig({
     { path: '~/components/Landing' },
     '~/components'
   ],
+  runtimeConfig: {
+    public: {
+      GQL_HOST: 'http://localhost:3000/graphql' // overwritten by process.env.GQL_HOST
+    }
+  }
 
 })
