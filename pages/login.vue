@@ -88,8 +88,8 @@
             variables: {email: this.email, pass: this.password},
             operation: 'SignIn'
           });
-
-          console.log(result.data.value.signIn.token);
+          
+          console.log("token:"+result.data.value.signIn.token+"errors:"+result.data.value.signIn.errors);
         } catch(err) {
           console.error(err);
         }
