@@ -1,16 +1,25 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia'
 
-export const useStore = defineStore('storeId', 
-{
-  // arrow function recommended for full type inference
-  state: () => {
-    return {
-      // all these properties will have their type inferred automatically
-      count: 0,
-      name: 'niki',
-      isAdmin: true,
-      items: [],
-      hasChanged: true,
+export const useAuthStore = defineStore('auth', {
+  state: () => ({
+    token: null as string | null,
+    user: null as any | null,
+    userAuthentication: false as boolean
+  }),
+  actions: {
+    setToken(token: string) {
+      this.token = token
+      localStorage.setItem('token', token)
+    },
+    setUser(user: any) {
+      this.user = user
+    },
+    clearToken() {
+      this.token = null
+      localStorage.removeItem('token')
+    },
+    clearUser() {
+      this.user = null
     }
-  },
+  }
 })

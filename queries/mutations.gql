@@ -11,13 +11,6 @@ mutation SignIn ($email: String!, $pass: String!)
     }
 }
 
-# input UserInput {
-#   firstName: String!
-#   lastName: String!
-#   email: String!
-#   corporationId: String!
-# }
-
 mutation SignUp($user: UserInput!, $password: String!) {
   signUp(input: {user: $user, password: $password}) {
     errors

@@ -73,6 +73,12 @@
 
 
 <script >
+
+
+
+  import { useAuthStore } from '~/store/store'
+  const store = useAuthStore();
+
   export default {
     name: "LoginForm",
     data() {
@@ -90,8 +96,16 @@
           });
           
           console.log("token:"+result.data.value.signIn.token+"errors:"+result.data.value.signIn.errors);
+          let token = result.data.value.signIn.token
+          let user = result.data.value.signIn.user
+          if (token){
+            store.token = token;
+            store.user = user;
+            store.userAuthentication = true;
+            this.$router.push('/dashboard');
+          }
         } catch(err) {
-          console.error(err);
+          console.log(err);
         }
 
       },

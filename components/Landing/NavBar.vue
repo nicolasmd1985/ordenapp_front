@@ -14,16 +14,28 @@
       ></MDBNavbarToggler>
       <MDBCollapse v-model="collapse1" id="navbarSupportedContent">
         <MDBNavbarNav right class="mb-2 mb-lg-0">
-          <MDBNavbarItem to="/plans" active>
+          <MDBNavbarItem to="/plans">
             Plans
           </MDBNavbarItem>
-          <MDBNavbarItem to="/register">
-            Create Account
-            <!-- <div><p>{{ authStore }}</p></div> -->
-          </MDBNavbarItem>
-          <MDBNavbarItem to="/login">
-            Login
-          </MDBNavbarItem>
+          <template v-if="store.userAuthentication">
+            <MDBNavbarItem to="/profile">
+              My Profile 
+            </MDBNavbarItem>
+            <MDBNavbarItem to="/" @click="signOut">
+              Sign Out
+            </MDBNavbarItem>
+
+          </template>
+          <template v-else>
+            <MDBNavbarItem to="/register">
+              Create Account
+              <!-- <div><p>{{ authStore }}</p></div> -->
+            </MDBNavbarItem>
+            <MDBNavbarItem to="/login">
+              Login
+            </MDBNavbarItem>
+          </template>
+
         </MDBNavbarNav>
       </MDBCollapse>
     </MDBNavbar>
@@ -32,30 +44,33 @@
 
 <script setup >
 
+  import { useAuthStore } from '~/store/store'
 
-  // import { useAuthStore } from '~/store/auth'
-  // const authStore = useAuthStore;
+  const store = useAuthStore();
+  const token = store.token;
 
-  //   // import { useAuthStore } from "~/stores/auth";
-  //   // const authStore = useAuthStore();
-  //   // const { user, isLoggedIn } = storeToRefs(authStore);
-  //   await authStore.
-    import {
-    MDBBtn,
-    MDBNavbar,
-    MDBNavbarToggler,
-    MDBNavbarBrand,
-    MDBNavbarNav,
-    MDBNavbarItem,
-    MDBCollapse,
-    MDBDropdown,
-    MDBDropdownToggle,
-    MDBDropdownMenu,
-    MDBDropdownItem
-    } from 'mdb-vue-ui-kit';
-    import { ref } from 'vue';
 
-    const collapse1 = ref(false);
-    const dropdown1 = ref(false);
+  function signOut() {
+    store.userAuthentication = false;
+  }
+
+  import {
+  MDBBtn,
+  MDBNavbar,
+  MDBNavbarToggler,
+  MDBNavbarBrand,
+  MDBNavbarNav,
+  MDBNavbarItem,
+  MDBCollapse,
+  MDBDropdown,
+  MDBDropdownToggle,
+  MDBDropdownMenu,
+  MDBDropdownItem
+  } from 'mdb-vue-ui-kit';
+  import { ref } from 'vue';
+  const collapse1 = ref(false);
+  const dropdown1 = ref(false);
+
+
 
 </script>
