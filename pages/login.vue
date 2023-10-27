@@ -74,8 +74,7 @@
 
 <script >
 
-
-
+  
   import { useAuthStore } from '~/store/store'
   const store = useAuthStore();
 

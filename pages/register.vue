@@ -147,6 +147,8 @@
 
 
 <script >
+  import { useAuthStore } from '~/store/store'
+  const store = useAuthStore();
   export default {
     name: "RegisterForm",
     data() {
@@ -175,7 +177,15 @@
               operation: 'SignUp'
           });
           console.log("token:"+result.data.value.signUp.token+"errors:"+result.data.value.signUp.errors);
-          console.log(result);
+          let token = result.data.value.signUp.token
+          let user = result.data.value.signUp.user
+          // console.log(result);
+          if (token){
+            store.token = token;
+            store.user = user;
+            store.userAuthentication = true;
+            this.$router.push('/dashboard');
+          }
           // const data = await GqlSignUp(user.)
         } catch(err) {
           console.log(err);

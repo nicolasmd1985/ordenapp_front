@@ -18,7 +18,7 @@
             Plans
           </MDBNavbarItem>
           <template v-if="store.userAuthentication">
-            <MDBNavbarItem to="/profile">
+            <MDBNavbarItem to="/admins/profile">
               My Profile 
             </MDBNavbarItem>
             <MDBNavbarItem to="/" @click="signOut">
@@ -43,6 +43,14 @@
 </template>
 
 <script setup >
+  import { createPinia } from 'pinia';
+  import { createApp } from 'vue'
+  import App from '@/app.vue'
+
+  const pinia = createPinia()
+  const app = createApp(App)
+  app.use(pinia)
+
 
   import { useAuthStore } from '~/store/store'
 
