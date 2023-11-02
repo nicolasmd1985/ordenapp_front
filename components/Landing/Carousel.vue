@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <section class="w-50 vh-30 m-auto d-flex align-items-center justify-content-center">
         <ClientOnly fallbackTag="div">
         <MDBCarousel v-model="carousel" :items="items1" fade />
@@ -34,4 +34,4 @@
   ];
 
   const carousel = useState("carousel", () => 0);
-</script>
+</script> -->

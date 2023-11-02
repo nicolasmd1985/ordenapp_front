@@ -1,5 +1,6 @@
 <template>
-    <MDBNavbar expand="lg" light bg="light" container>
+
+    <!-- <tw-navbar expand="lg" light bg="light" container>
       <NuxtLink to="/">
         <img
           src="~/assets/images/logo-03.png"
@@ -8,37 +9,36 @@
           loading="lazy"
         />  
       </NuxtLink>
-      <MDBNavbarToggler
+      <tw-navbar-toggler
         @click="collapse1 = !collapse1"
         target="#navbarSupportedContent"
-      ></MDBNavbarToggler>
-      <MDBCollapse v-model="collapse1" id="navbarSupportedContent">
+      ></tw-navbar-toggler>
+      <tw-collapse v-model="collapse1" id="navbarSupportedContent">
         <MDBNavbarNav right class="mb-2 mb-lg-0">
-          <MDBNavbarItem to="/plans">
+          <tw-navbar-item to="/plans">
             Plans
-          </MDBNavbarItem>
+          </tw-navbar-item>
           <template v-if="store.userAuthentication">
-            <MDBNavbarItem to="/admins/profile">
+            <tw-navbar-item to="/admins/profile">
               My Profile 
-            </MDBNavbarItem>
-            <MDBNavbarItem to="/" @click="signOut">
+            </tw-navbar-item>
+            <tw-navbar-item to="/" @click="signOut">
               Sign Out
-            </MDBNavbarItem>
+            </tw-navbar-item>
 
           </template>
           <template v-else>
-            <MDBNavbarItem to="/register">
+            <tw-navbar-item to="/register">
               Create Account
-              <!-- <div><p>{{ authStore }}</p></div> -->
-            </MDBNavbarItem>
-            <MDBNavbarItem to="/login">
+            </tw-navbar-item>
+            <tw-navbar-item to="/login">
               Login
-            </MDBNavbarItem>
+            </tw-navbar-item>
           </template>
 
         </MDBNavbarNav>
-      </MDBCollapse>
-    </MDBNavbar>
+      </tw-collapse>
+    </tw-navbar> -->
     
 </template>
 
@@ -62,22 +62,15 @@
     store.userAuthentication = false;
   }
 
+  // Initialization for ES Users
   import {
-  MDBBtn,
-  MDBNavbar,
-  MDBNavbarToggler,
-  MDBNavbarBrand,
-  MDBNavbarNav,
-  MDBNavbarItem,
-  MDBCollapse,
-  MDBDropdown,
-  MDBDropdownToggle,
-  MDBDropdownMenu,
-  MDBDropdownItem
-  } from 'mdb-vue-ui-kit';
-  import { ref } from 'vue';
-  const collapse1 = ref(false);
-  const dropdown1 = ref(false);
+    Collapse,
+    Dropdown,
+    initTE,
+  } from "tw-elements";
+
+  initTE({ Collapse, Dropdown });
+
 
 
 

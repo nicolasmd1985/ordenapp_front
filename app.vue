@@ -1,3 +1,7 @@
+<script setup>
+  import "tw-elements/dist/css/tw-elements.min.css";
+  
+</script>
 <template>
   <div>
     <NuxtLayout>
@@ -6,5 +10,3 @@
   </div>
 </template>
 
-<script>
-</script>

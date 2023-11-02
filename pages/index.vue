@@ -1,14 +1,15 @@
 <script  >
 
-
 </script>
 
 <template>
-  <VideoIntro/>
-  <FirstFrame/>
-  <SecondFrame/>
-  <FeatureFrame/>
-  <Footer/>
+  <ClientOnly>
+    <VideoIntro/>
+    <FirstFrame/>
+    <SecondFrame/>
+    <FeatureFrame/>
+    <Footer/> 
+  </ClientOnly>
 </template>
 
   

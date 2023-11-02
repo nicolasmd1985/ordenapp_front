@@ -3,7 +3,8 @@ export default defineNuxtConfig({
   modules: [
     // ...
     '@pinia/nuxt',
-    'nuxt-graphql-client'
+    'nuxt-graphql-client',
+    'nuxt-icon'
   ],
   app:{
     head: {
@@ -19,14 +20,18 @@ export default defineNuxtConfig({
       ],
     },
   },
-  css: ["~/assets/scss/index.scss"],
-  build: {
-    transpile: ["mdb-vue-ui-kit"],
+  css: ["~/assets/css/main.css"],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
   },
   plugins: [{ src: '@/plugins/aos', mode: 'client' }],
   devtools: { enabled: true },
   components: [
     // ~/calendar-module/components/event/Update.vue => <EventUpdate />
+    { path: '~/components/Admin' },
     { path: '~/components/Landing' },
     '~/components'
   ],

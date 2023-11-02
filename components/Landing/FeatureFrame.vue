@@ -1,140 +1,93 @@
 <template>
   <div class="feature-section">
     <div class="container">
-      <h3 class="my-5 text-center">
-        ...and much more
-      </h3>
-      <div class="row features-small mt-5 justify-content-md-center">
-        <div class="col-xl-5 col-lg-6" data-aos="fade-right" data-aos-duration="1500">
-          <!-- Grid row -->
-          <div class="row">
-            <div class="col-2">
-              <i class="fa fa-street-view fa-2x mb-1" aria-hidden="true"></i>
+      <h3 class="my-5 text-center">...and much more</h3>
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 mt-5 justify-content-center">
+        <div
+          v-for="feature in features"
+          :key="feature.title"
+          class="data-aos-feature"
+          :data-aos="feature.animation"
+          :data-aos-duration="feature.animationDuration"
+        >
+          <div class="grid grid-cols-2 gap-2 mb-2 pl-3">
+            <div  >
+              <Icon :name="feature.iconName" aria-hidden="true" size="30px"></Icon>
             </div>
-            <div class="col-10 mb-2 pl-3">
-              <h5 class="feature-title font-bold mb-1">
-                Geolocation
-              </h5>
-              <p class="grey-text mt-2">
-                Resource tracking in real time.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-5 col-lg-6" data-aos="fade-left" data-aos-duration="1500">
-          <!-- Grid row -->
-          <div class="row">
-            <div class="col-2">
-              <i class="fa fa-clock-o fa-2x mb-1" aria-hidden="true"></i>
-            </div>
-            <div class="col-10 mb-2 pl-3">
-              <h5 class="feature-title font-bold mb-1">
-                Time Control
-              </h5>
-              <p class="grey-text mt-2">
-                Know exactly when and where operations are carried out.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-5 col-lg-6" data-aos="fade-right" data-aos-duration="1500">
-          <!-- Grid row -->
-          <div class="row">
-            <div class="col-2">
-              <i class="material-icons md-36 assignment_turned_in"></i>
-            </div>
-            <div class="col-10 mb-2 pl-3">
-              <h5 class="feature-title font-bold mb-1">
-                Work Orders
-              </h5>
-              <p class="grey-text mt-2">
-                Online work orders assignment 24/7
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-5 col-lg-6" data-aos="fade-left" data-aos-duration="1500">
-          <!-- Grid row -->
-          <div class="row">
-            <div class="col-2">
-              <i class="material-icons md-36 fingerprint"></i>
-            </div>
-            <div class="col-10 mb-2 pl-3">
-              <h5 class="feature-title font-bold mb-1">
-                Digital Signature
-              </h5>
-              <p class="grey-text mt-2">
-                Make sure that your orders have been completed throught the digital signature capture.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-5 col-lg-6" data-aos="fade-right" data-aos-duration="1500">
-          <!-- Grid row -->
-          <div class="row">
-            <div class="col-2">
-              <i class="fa fa-users fa-2x mb-1" aria-hidden="true"></i>
-            </div>
-            <div class="col-10 mb-2 pl-3">
-              <h5 class="feature-title font-bold mb-1">
-                Activity
-              </h5>
-              <p class="grey-text mt-2">
-                Know the current status and activities of your collaborators.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-5 col-lg-6" data-aos="fade-left" data-aos-duration="1500">
-          <!-- Grid row -->
-          <div class="row">
-            <div class="col-2">
-              <i class="material-icons md-36 build"></i>
-            </div>
-            <div class="col-10 mb-2 pl-3">
-              <h5 class="feature-title font-bold mb-1">
-                Tools tracking report
-              </h5>
-              <p class="grey-text mt-2">
-                Avoid tools loss knowing to whom it has been assigned.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-5 col-lg-6" data-aos="fade-right" data-aos-duration="1500">
-          <!-- Grid row -->
-          <div class="row">
-            <div class="col-2">
-              <i class="material-icons md-36 settings_input_antenna"></i>
-            </div>
-            <div class="col-10 mb-2 pl-3">
-              <h5 class="feature-title font-bold mb-1">
-                Follow up materials and equipment
-              </h5>
-              <p class="grey-text mt-2">
-                Identify and track in real time electromechanical equipment and materials.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-5 col-lg-6" data-aos="fade-left" data-aos-duration="1500">
-          <!-- Grid row -->
-          <div class="row">
-            <div class="col-2">
-              <i class="material-icons md-36 report_problem"></i>
-            </div>
-            <div class="col-10 mb-2 pl-3">
-              <h5 class="feature-title font-bold mb-1">
-                Maintenance Alert
-              </h5>
-              <p class="grey-text mt-2">
-                Mainteinance automation for materials and equipments according to their nature.
-              </p>
+            <div class="mb-2 pl-3">
+              <h5 class="feature-title font-bold mb-1">{{ feature.title }}</h5>
+              <p class="grey-text mt-2">{{ feature.description }}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
 </template>
+
+<script>
+  export default {
+    data() {
+      return {
+        features: [
+          {
+            title: "Geolocation",
+            description: "Resource tracking in real time.",
+            iconName: "emojione-v1:ballot-box-bold-check",
+            animation: "fade-right",
+            animationDuration: "1500",
+          },
+          {
+            title: "Time Control",
+            description: "Know exactly when and where operations are carried out.",
+            iconName: "emojione-v1:ballot-box-bold-check",
+            animation: "fade-left",
+            animationDuration: "1500",
+          },
+          {
+            title: "Work Orders",
+            description: "Online work orders assignment 24/7",
+            iconName: "uil:github",
+            animation: "fade-right",
+            animationDuration: "1500",
+          },
+          {
+            title: "Digital Signature",
+            description: "Make sure that your orders have been completed throught the digital signature capture.",
+            iconName: "emojione-v1:ballot-box-bold-check",
+            animation: "fade-left",
+            animationDuration: "1500",
+          },
+          {
+            title: "Activity",
+            description: "Know the current status and activities of your collaborators.",
+            iconName: "emojione-v1:ballot-box-bold-check",
+            animation: "fade-right",
+            animationDuration: "1500",
+          },
+          {
+            title: "Tools tracking report",
+            description: "Avoid tools loss knowing to whom it has been assigned.",
+            iconName: "emojione-v1:cat-face-with-tears-of-joy",
+            animation: "fade-left",
+            animationDuration: "1500",
+          },
+          {
+            title: "Follow up materials and equipment",
+            description: "Identify and track in real time electromechanical equipment and materials.",
+            iconName: "emojione-v1:ballot-box-bold-check",
+            animation: "fade-right",
+            animationDuration: "1500",
+          },
+          {
+            title: "Maintenance Alert",
+            description: "Mainteinance automation for materials and equipments according to their nature.",
+            iconName: "emojione-v1:ballot-box-bold-check",
+            animation: "fade-left",
+            animationDuration: "1500",
+          },
+        ],
+      };
+    },
+  };
+</script>

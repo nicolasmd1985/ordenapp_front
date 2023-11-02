@@ -1,10 +1,13 @@
 <script>
+
 </script>
 
 <template>
   <div>
     <header>
-      <NavBar/>
+      <ClientOnly>
+        <NavBarLanding/>
+      </ClientOnly>
       <slot/>
     </header>
   </div>
