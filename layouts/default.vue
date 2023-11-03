@@ -1,15 +1,9 @@
-<script>
-
-</script>
-
 <template>
-  <div>
-    <header>
-      <ClientOnly>
-        <NavBarLanding/>
-      </ClientOnly>
-      <slot/>
-    </header>
-  </div>
-
+  <ClientOnly>
+    <NavBarLanding/>
+    <slot/>
+  </ClientOnly>
 </template>
+<script setup>
+  // import NavBarLanding from "~/components/Landing/NavBarLanding.vue";
+</script>

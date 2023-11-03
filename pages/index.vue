@@ -1,7 +1,3 @@
-<script  >
-
-</script>
-
 <template>
   <ClientOnly>
     <VideoIntro/>
@@ -13,3 +9,5 @@
 </template>
 
   
+<script>
+</script>
