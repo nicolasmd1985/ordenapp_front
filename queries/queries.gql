@@ -1,0 +1,11 @@
+query Subsidiaries
+{
+    subsidiaries {
+        address
+        email
+        id
+        name
+        phone
+        subsidiaryInitials
+    }
+}

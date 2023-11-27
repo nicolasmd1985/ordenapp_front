@@ -3,11 +3,8 @@
   
 </script>
 <template>
-  <ClientOnly>
-    <NuxtLayout>
-      <NuxtPage/>
-    </NuxtLayout>
-  </ClientOnly>
-
+  <NuxtLayout>
+    <NuxtPage/>
+  </NuxtLayout>
 </template>
 

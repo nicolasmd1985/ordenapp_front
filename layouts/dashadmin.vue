@@ -4,7 +4,8 @@
     <NavBarAdmin/>
     <SideBarAdmin/> 
     <div class="" id="content">
-      <div class="my-5 flex text-start">
+      <div class="my-5">
+        <NavBarName/>
         <slot/>
       </div>      
     </div>

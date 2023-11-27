@@ -27,6 +27,7 @@
     "aos": "^2.3.4",
     "nuxt-graphql-client": "^0.2.30",
     "pinia": "^2.1.7",
-    "tw-elements": "^1.0.0"
+    "tw-elements": "^1.0.0",
+    "vue3-easy-data-table": "^1.5.47"
   }
 }

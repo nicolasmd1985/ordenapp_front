@@ -146,11 +146,17 @@
             data-te-dropdown-menu-ref>
             <!-- Second dropdown menu items -->
             <li>
-              <a
+              <NuxtLink to="/admin/profile"
                 class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
-                href="#"
                 data-te-dropdown-item-ref
-                >Action</a
+                >profile</NuxtLink
+              >
+            </li>
+            <li>
+              <NuxtLink to="/login"
+                class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                data-te-dropdown-item-ref
+                >login</NuxtLink
               >
             </li>
             <li>
@@ -158,15 +164,8 @@
                 class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
                 href="#"
                 data-te-dropdown-item-ref
-                >Another action</a
-              >
-            </li>
-            <li>
-              <a
-                class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
-                href="#"
-                data-te-dropdown-item-ref
-                >Something else here</a
+                @click="SignOut"
+                >Sign Out</a
               >
             </li>
           </ul>
@@ -174,67 +173,21 @@
       </div>
     </div>
   </nav>
-    <!-- <tw-navbar expand="lg" light bg="light" container>
-      <NuxtLink to="/">
-        <img
-          src="~/assets/images/logo-03.png"
-          height="80"
-          alt=""
-          loading="lazy"
-        />  
-      </NuxtLink>
-      <tw-navbar-toggler
-        @click="collapse1 = !collapse1"
-        target="#navbarSupportedContent"
-      ></tw-navbar-toggler>
-      <tw-collapse v-model="collapse1" id="navbarSupportedContent">
-        <MDBNavbarNav right class="mb-2 mb-lg-0">
-          <tw-navbar-item to="/plans">
-            Plans
-          </tw-navbar-item>
-          <template v-if="store.userAuthentication">
-            <tw-navbar-item to="/admins/profile">
-              My Profile 
-            </tw-navbar-item>
-            <tw-navbar-item to="/" @click="signOut">
-              Sign Out
-            </tw-navbar-item>
 
-          </template>
-          <template v-else>
-            <tw-navbar-item to="/register">
-              Create Account
-            </tw-navbar-item>
-            <tw-navbar-item to="/login">
-              Login
-            </tw-navbar-item>
-          </template>
-
-        </MDBNavbarNav>
-      </tw-collapse>
-    </tw-navbar> -->
-    
 </template>
 
-<script  >
-  import { createPinia } from 'pinia';
-  import { createApp } from 'vue'
-  import App from '@/app.vue'
+<script setup >
 
-  const pinia = createPinia()
-  const app = createApp(App)
-  app.use(pinia)
+  import useAuthStore  from '~/store/authstore'
+  const authStore = useAuthStore();
 
-
-  import { useAuthStore } from '~/store/store'
-
-  const store = useAuthStore();
-  const token = store.token;
-
-
-  function signOut() {
-    store.userAuthentication = false;
+  const signOut = () => {
+    debuger;
   }
+
+  // function signOut() {
+  //   authStore.userAuthentication = false;
+  // }
 
   // Initialization for ES Users
   import {
@@ -246,6 +199,7 @@
   onMounted(() => {
     initTE({ Collapse, Dropdown });
   });
+
 
 
 

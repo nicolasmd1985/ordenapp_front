@@ -193,7 +193,7 @@
 
 
 <script >
-  import { useAuthStore } from '~/store/store'
+  import { useAuthStore } from '~/store/authstore'
   const store = useAuthStore();
   export default {
     name: "RegisterForm",
@@ -230,7 +230,7 @@
             store.token = token;
             store.user = user;
             store.userAuthentication = true;
-            this.$router.push('/dashboard');
+            this.$router.push('/admin/subsidiaries');
           }
           // const data = await GqlSignUp(user.)
         } catch(err) {

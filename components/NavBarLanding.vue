@@ -146,24 +146,26 @@
   onMounted(() => {
     initTE({ Collapse, Dropdown });
   });
+
   
-  import { createPinia } from 'pinia';
-  import { createApp } from 'vue'
-  import App from '@/app.vue'
+  
+  // import { createPinia } from 'pinia';
+  // import { createApp } from 'vue'
+  // import App from '@/app.vue'
 
-  const pinia = createPinia()
-  const app = createApp(App)
-  app.use(pinia)
-
-
-  import { useAuthStore } from '~/store/store'
-
-  const store = useAuthStore();
-  const token = store.token;
+  // const pinia = createPinia()
+  // const app = createApp(App)
+  // app.use(pinia)
 
 
-  function signOut() {
-    store.userAuthentication = false;
-  }
+  // import { useAuthStore } from '~/store/authstore'
+
+  // const store = useAuthStore();
+  // const token = store.token;
+
+
+  // function signOut() {
+  //   store.userAuthentication = false;
+  // }
 
 </script>
