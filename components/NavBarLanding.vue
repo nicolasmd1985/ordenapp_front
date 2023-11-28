@@ -67,7 +67,7 @@
         </ul>
 
         <div class="flex items-center">
-          <NuxtLink to="/login">
+          <NuxtLink to="/loginview">
             <button
               type="button"
               data-te-ripple-init
@@ -78,7 +78,7 @@
           </NuxtLink>
 
           <!-- <NuxtLink to="/register"> -->
-          <NuxtLink to="/register">
+          <NuxtLink to="/registerview">
             <button
               type="button"
               data-te-ripple-init
@@ -93,60 +93,25 @@
       </div>
     </div>
   </nav>
-    <!-- <tw-navbar expand="lg" light bg="light" container>
-      <NuxtLink to="/">
-        <img
-          src="~/assets/images/logo-03.png"
-          height="80"
-          alt=""
-          loading="lazy"
-        />  
-      </NuxtLink>
-      <tw-navbar-toggler
-        @click="collapse1 = !collapse1"
-        target="#navbarSupportedContent"
-      ></tw-navbar-toggler>
-      <tw-collapse v-model="collapse1" id="navbarSupportedContent">
-        <MDBNavbarNav right class="mb-2 mb-lg-0">
-          <tw-navbar-item to="/plans">
-            Plans
-          </tw-navbar-item>
-          <template v-if="store.userAuthentication">
-            <tw-navbar-item to="/admins/profile">
-              My Profile 
-            </tw-navbar-item>
-            <tw-navbar-item to="/" @click="signOut">
-              Sign Out
-            </tw-navbar-item>
 
-          </template>
-          <template v-else>
-            <tw-navbar-item to="/register">
-              Create Account
-            </tw-navbar-item>
-            <tw-navbar-item to="/login">
-              Login
-            </tw-navbar-item>
-          </template>
-
-        </MDBNavbarNav>
-      </tw-collapse>
-    </tw-navbar> -->
-    
 </template>
 
 <script  setup>
 // Initialization for ES Users
-  import {
-    Collapse,
-    Dropdown,
-    initTE,
-  } from "tw-elements";
+  // import {
+  //   Collapse,
+  //   Dropdown,
+  //   initTE,
+  // } from "tw-elements";
 
-  onMounted(() => {
-    initTE({ Collapse, Dropdown });
+  // onMounted(() => {
+  //   initTE({ Collapse, Dropdown });
+  // });
+
+  onMounted(async () => {
+    const { Collapse, Dropdown, initTE } = await import("tw-elements");
+    initTE({ Collapse, Dropdown },{ allowReinits: true });
   });
-
   
   
   // import { createPinia } from 'pinia';

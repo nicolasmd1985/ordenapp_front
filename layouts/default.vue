@@ -4,5 +4,5 @@
     <slot/>
   </ClientOnly>
 </template>
-<script>
+<script setup>
 </script>

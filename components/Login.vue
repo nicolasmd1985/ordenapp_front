@@ -80,17 +80,24 @@
 </template>
 
 <script setup lang="ts">
-    // Initialization for ES Users
-    import {
-      Ripple,
-      Input,
-      initTE,
-    } from "tw-elements";
+    // // Initialization for ES Users
+    // import {
+    //   Ripple,
+    //   Input,
+    //   initTE,
+    // } from "tw-elements";
 
-    onMounted(() => {
-      initTE({ Ripple, Input });
+    // // initTE({ Ripple, Input });
+
+
+    // onMounted(() => {
+    //   initTE({ Ripple, Input });
+    // });
+
+    onMounted(async () => {
+      const { Ripple, Input, initTE } = await import("tw-elements");
+      initTE({ Ripple, Input }, { allowReinits: true });
     });
-
 
   import useAuthStore from '~/store/authstore';
   const authStore = useAuthStore();
@@ -107,19 +114,19 @@
   })
 
 
-    const submit = async () => {
+  const submit = async () => {
     const { data, error, pending, refresh } = await useAsyncGql('SignIn', { email: email.value, pass: password.value });
 
     if (error.value) {
       // eslint-disable-next-line no-console
-      debugger;
+      // debugger;
       console.log(error.value)
     }
     if (data.value && data.value.signIn?.token) {
-      debugger;
+      // debugger;
       authStore.token = data.value.signIn.token;
       authStore.userAuthentication = true;
-      router.push('/admin/subsidiariesview');
+      router.push('/admin/profileview');
     }
     if (pending) {
       

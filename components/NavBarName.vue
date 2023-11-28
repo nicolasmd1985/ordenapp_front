@@ -13,16 +13,5 @@
   </nav>
 </template>
 
-<script>
-    const route = useRoute();
-  export default {
-    name: "NabBarName",
-    
-    data() {
-      return {
-        name: route.name,
-      };
-    },    
-  };
-
+<script setup>
 </script>

@@ -1,9 +1,4 @@
 <template>
-  <!-- <span>search field:</span> -->
-  <!-- <select v-model="searchField">
-    <option>player</option>
-    <option>team</option>
-  </select> -->
   
   <br/>
 

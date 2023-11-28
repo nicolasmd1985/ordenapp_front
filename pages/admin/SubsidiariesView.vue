@@ -1,9 +1,9 @@
 <template>
-  <ClientOnly>
+  <!-- <ClientOnly> -->
     <InfoValue/>
-    <p>{{ authStore.token }}</p>
+    <!-- <p>{{ authStore.token }}</p>
 
-  </ClientOnly>
+  </ClientOnly> -->
 </template>
 
 
@@ -12,13 +12,15 @@
     layout: "dashadmin",
   });
 
+  import InfoValue from '~/components/InfoValue.vue';
+
   const router = useRouter();
 
   import useAuthStore from '~/store/authstore'
   const authStore = useAuthStore();
 
   if (!authStore.userAuthentication) {
-    router.push('/login');
+    router.push('/loginview');
   }
 
   useGqlToken({
@@ -52,7 +54,7 @@
 
   if (error.value) {
       // eslint-disable-next-line no-console
-      debugger;
+      // debugger;
       console.log(error.value)
     }
 

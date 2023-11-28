@@ -18,9 +18,10 @@
     layout: "dashadmin",
   });
 
-  import ProfileCard from '~/components/Admin/ProfileCard.vue';
   import useAuthStore from '~/store/authstore'
   import useProfile from '~/store/profile'
+
+  import ProfileCard from '~/components/ProfileCard.vue';
   
   const authStore = useAuthStore();
   const profile = useProfile();
@@ -28,7 +29,7 @@
 
 
   if (!authStore.userAuthentication) {
-    router.push('/login');
+    router.push('/loginview');
   }
 
   useGqlToken({
@@ -45,7 +46,7 @@
   });
 
   if (data.value != null) {
-    debugger;
+    // debugger;
     profile.avatar = data.value.userAdmin.avatar;
     profile.firstName = data.value.userAdmin.firstName;
     profile.lastName = data.value.userAdmin.lastName;
@@ -53,7 +54,7 @@
   } 
   if (error.value) {
       // eslint-disable-next-line no-console
-      debugger;
+      // debugger;
       console.log(error.value)
     }
 

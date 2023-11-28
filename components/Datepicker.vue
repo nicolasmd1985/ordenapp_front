@@ -16,10 +16,8 @@
 </template>
 
 <script setup>
-    import { onMounted } from "vue";
-    import { Datepicker, Input, initTE } from "tw-elements";
-
-    onMounted(() => {
-      initTE({ Datepicker, Input });
-    });
+  onMounted(async () => {
+    const { Datepicker, Input, initTE } = await import("tw-elements");
+    initTE({ Datepicker, Input },{ allowReinits: true });
+  });
 </script>

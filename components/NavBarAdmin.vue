@@ -146,14 +146,14 @@
             data-te-dropdown-menu-ref>
             <!-- Second dropdown menu items -->
             <li>
-              <NuxtLink to="/admin/ProfileView"
+              <NuxtLink to="/admin/profileview"
                 class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
                 data-te-dropdown-item-ref
                 >profile</NuxtLink
               >
             </li>
             <li>
-              <NuxtLink to="/login"
+              <NuxtLink to="/loginview"
                 class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
                 data-te-dropdown-item-ref
                 >login</NuxtLink
@@ -177,18 +177,6 @@
 </template>
 
 <script setup >
-
-  import useAuthStore  from '~/store/authstore'
-  const authStore = useAuthStore();
-
-  const signOut = () => {
-    debuger;
-  }
-
-  // function signOut() {
-  //   authStore.userAuthentication = false;
-  // }
-
   // Initialization for ES Users
   import {
     Collapse,
@@ -199,6 +187,23 @@
   onMounted(() => {
     initTE({ Collapse, Dropdown });
   });
+
+  // onMounted(async () => {
+  //   const { Collapse, Dropdown, initTE } = await import("tw-elements");
+  //   initTE({ Collapse, Dropdown });
+  // });
+
+  import useAuthStore  from '~/store/authstore'
+  const authStore = useAuthStore();
+
+  const signOut = () => {
+  }
+
+  // function signOut() {
+  //   authStore.userAuthentication = false;
+  // }
+
+
 
 
 

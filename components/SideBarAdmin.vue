@@ -173,6 +173,11 @@
     initTE({ Sidenav });
   });
 
+  // onMounted(async () => {
+  //   const { Sidenav, initTE } = await import("tw-elements");
+  //   initTE({ Sidenav });
+  // });
+
   //   const modeSwitch = document.getElementById(mode);
   //   modeSwitch.addEventListener("click", () => {
   //     const instance = Sidenav.getInstance(
