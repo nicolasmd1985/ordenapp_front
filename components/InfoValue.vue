@@ -23,18 +23,17 @@
   import type { Header, Item } from "vue3-easy-data-table";
 
   // const searchField = ref("player");
-  const searchField = ["player", "team", "number", "position", "lastAttended"];
+  const searchField = ["Subsidiary", "Phone", "Address", "Email", "Initials", "Enabled", "Options"];
   const searchValue = ref("");
-    
+
   const headers: Header[] = [
-    { text: "PLAYER", value: "player" },
-    { text: "TEAM", value: "team"},
-    { text: "NUMBER", value: "number"},
-    { text: "POSITION", value: "position"},
-    { text: "HEIGHT", value: "height"},
-    { text: "WEIGHT (lbs)", value: "weight", sortable: true},
-    { text: "LAST ATTENDED", value: "lastAttended"},
-    { text: "COUNTRY", value: "country"},
+    { text: "Subsidiary", value: "subsidiary" },
+    { text: "Phone", value: "phone"},
+    { text: "Address", value: "address"},
+    { text: "Email", value: "email"},
+    { text: "Initials", value: "initials", sortable: true},
+    { text: "Enabled", value: "enabled"},
+    { text: "Options", value: "options"},
   ];
 
   const items: Item[] = [

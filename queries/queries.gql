@@ -9,3 +9,13 @@ query Subsidiaries
         subsidiaryInitials
     }
 }
+
+query UserAdmin {
+    userAdmin {
+        corporationId
+        email
+        firstName
+        id
+        lastName
+    }
+}

@@ -230,7 +230,7 @@
             store.token = token;
             store.user = user;
             store.userAuthentication = true;
-            this.$router.push('/admin/subsidiaries');
+            this.$router.push('/admin/subsidiariesview');
           }
           // const data = await GqlSignUp(user.)
         } catch(err) {
