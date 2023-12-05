@@ -2,69 +2,61 @@
 
   <div class="h-full flex justify-center items-center p-6">
     <div
-    class="block max-w-sm rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-    <form @submit.prevent="submit">
-      <div class="grid grid-cols-2 gap-7">
-          <!--Avatar-->
-          <div class="relative col-span-2 mb-6">
-            <img
-              :src="avatar"
-              class="rounded-full w-20 h-20 mx-auto"
-              alt="Profile picture" />
-          </div>
-
-          <!--First Name input-->
-          <div class="relative mb-6" data-te-input-wrapper-init>
-            <input
-              :value="firstName"
-              type="text"
-              class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-              id="firstNameId"
-              aria-describedby="emailHelp"
-              placeholder="Enter email" />
-            <label
-              for="firstNameId"
-              class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-              >First Name</label
-            >
-          </div>
-
-          <!--Last Name input-->
-          <div class="relative mb-6" data-te-input-wrapper-init>
-            <input
-              :value="lastName"
-              type="text"
-              class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-              id="lastNameId"
-              placeholder="Password" />
-            <label
-              for="lastNameId"
-              class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-              >Last Name</label
-            >
-          </div>
-
-          <!--Email input-->
-          <div class="relative mb-6" data-te-input-wrapper-init>
-            <input
-              :value="email"
-              type="email"
-              class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-              id="emailId"
-              placeholder="Password" />
-            <label
-              for="emailId"
-              class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-              >Email</label
-            >
-          </div>
-
-
-
-
+    class="w-96 block max-w-sm rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+    <form @submit.prevent="submit" class="">
+      <!--Avatar-->
+      <div class="relative col-span-2 mb-6">
+        <img
+          :src="avatar"
+          class="rounded-full w-20 h-20 mx-auto"
+          alt="Profile picture" />
       </div>
 
+      <!--First Name input-->
+      <div class="relative mb-6" data-te-input-wrapper-init>
+        <input
+          :value="firstName"
+          type="text"
+          class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+          id="firstNameId"
+          aria-describedby="emailHelp"
+          placeholder="Enter email" />
+        <label
+          for="firstNameId"
+          class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+          >First Name</label
+        >
+      </div>
 
+      <!--Last Name input-->
+      <div class="relative mb-6" data-te-input-wrapper-init>
+        <input
+          :value="lastName"
+          type="text"
+          class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+          id="lastNameId"
+          placeholder="Password" />
+        <label
+          for="lastNameId"
+          class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+          >Last Name</label
+        >
+      </div>
+
+      <!--Email input-->
+      <div class="relative mb-6" data-te-input-wrapper-init>
+        <input
+          :value="email"
+          type="email"
+          class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+          id="emailId"
+          placeholder="Password" />
+        <label
+          for="emailId"
+          class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+          >Email</label
+        >
+      </div>
 
       <!--Submit button-->
       <button
@@ -93,16 +85,6 @@
   import useProfile from '~/store/profile'
   const profile = useProfile();
 
-
-  useGqlToken({
-    token: authStore.token,
-    config: {
-      type: 'Bearer',
-      name: 'Authorization'
-    }
-  })
-
-
   const props = defineProps({
   avatar: {
     type: String,
@@ -129,6 +111,7 @@
 
 
 const submit = async () => {
+
   const firstName = document.getElementById('firstNameId').value;
   const lastName =  document.getElementById('lastNameId').value;
   const email =  document.getElementById('emailId').value;
@@ -142,7 +125,7 @@ const submit = async () => {
     // eslint-disable-next-line no-console
     console.log(error.value)
   }
-  if (data.value && data.value.signIn?.token) {
+  if (data.value) {
     profile.firstName = firstName.value;
     profile.lastName = lastName.value;
     profile.email = email.value;

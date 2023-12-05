@@ -110,7 +110,7 @@
 
   onMounted(async () => {
     const { Collapse, Dropdown, initTE } = await import("tw-elements");
-    initTE({ Collapse, Dropdown },{ allowReinits: true });
+    initTE({ Collapse, Dropdown });
   });
   
   

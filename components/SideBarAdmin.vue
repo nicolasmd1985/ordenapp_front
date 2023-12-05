@@ -4,7 +4,7 @@
     id="sidenav-2"
     class="fixed left-0 top-0 z-[1035] h-screen w-60 -translate-x-full overflow-hidden bg-white shadow-[0_4px_12px_0_rgba(0,0,0,0.07),_0_2px_4px_rgba(0,0,0,0.05)] data-[te-sidenav-hidden='false']:translate-x-0 dark:bg-zinc-800"
     data-te-sidenav-init
-    data-te-sidenav-hidden="false"
+    data-te-sidenav-hidden="true"
     data-te-sidenav-mode="side"
     data-te-sidenav-content="#content">
     <a
@@ -60,7 +60,7 @@
           class="!visible relative m-0 hidden list-none p-0 data-[te-collapse-show]:block "
           data-te-sidenav-collapse-ref>
           <li class="relative">
-            <NuxtLink to="/admin/subsi">
+            <NuxtLink to="/admin/newsubsidiaryview">
               <a
                 class="flex h-6 cursor-pointer items-center truncate rounded-[5px] py-4 pl-[3.4rem] pr-6 text-[0.78rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
                 data-te-sidenav-link-ref
@@ -173,38 +173,5 @@
     initTE({ Sidenav });
   });
 
-  // onMounted(async () => {
-  //   const { Sidenav, initTE } = await import("tw-elements");
-  //   initTE({ Sidenav });
-  // });
-
-  //   const modeSwitch = document.getElementById(mode);
-  //   modeSwitch.addEventListener("click", () => {
-  //     const instance = Sidenav.getInstance(
-  //       document.getElementById("sidenav-2")
-  //     );
-  //     instance.changeMode(mode);
-  //     modes.forEach((el) => {
-  //       if (el === mode) {
-  //         ["text-blue-600", "border-blue-600"].forEach((item) =>
-  //           modeSwitch.classList.remove(item)
-  //         );
-  //         modeSwitch.className +=
-  //           " bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 focus:bg-blue-700 border-transparent";
-  //       } else {
-  //         const node = document.getElementById(el);
-  //         node.className += " text-blue-600 border-blue-600";
-  //         [
-  //           "bg-blue-600",
-  //           "text-white",
-  //           "hover:bg-blue-700",
-  //           "active:bg-blue-800",
-  //           "focus:bg-blue-700",
-  //           "border-transparent",
-  //         ].forEach((item) => node.classList.remove(item));
-  //       }
-  //     });
-  //   });
-  // });
 
 </script>

@@ -79,25 +79,11 @@
   </div>
 </template>
 
-<script setup lang="ts">
-    // // Initialization for ES Users
-    // import {
-    //   Ripple,
-    //   Input,
-    //   initTE,
-    // } from "tw-elements";
-
-    // // initTE({ Ripple, Input });
-
-
-    // onMounted(() => {
-    //   initTE({ Ripple, Input });
-    // });
-
-    onMounted(async () => {
-      const { Ripple, Input, initTE } = await import("tw-elements");
-      initTE({ Ripple, Input }, { allowReinits: true });
-    });
+<script setup >
+  onMounted(async () => {
+    const { Ripple, Input, initTE } = await import("tw-elements");
+    initTE({ Ripple, Input }, { allowReinits: true });
+  });
 
   import useAuthStore from '~/store/authstore';
   const authStore = useAuthStore();
@@ -105,27 +91,29 @@
   const password = ref('');
   const router = useRouter();
 
-  useGqlToken({
-    token: authStore.token,
-    config: {
-      type: 'Bearer',
-      name: 'none'
-    }
-  })
 
 
   const submit = async () => {
+
     const { data, error, pending, refresh } = await useAsyncGql('SignIn', { email: email.value, pass: password.value });
 
     if (error.value) {
       // eslint-disable-next-line no-console
-      // debugger;
-      console.log(error.value)
+      debugger;
+
+
     }
     if (data.value && data.value.signIn?.token) {
       // debugger;
       authStore.token = data.value.signIn.token;
       authStore.userAuthentication = true;
+      useGqlToken({
+        token: data.value.signIn.token,
+        config: {
+          type: 'Bearer',
+          name: 'Authorization'
+        }
+      });
       router.push('/admin/profileview');
     }
     if (pending) {

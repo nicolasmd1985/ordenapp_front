@@ -27,7 +27,10 @@ export default defineNuxtConfig({
       ],
     },
   },
-  plugins: [{ src: '@/plugins/aos', mode: 'client' }],
+  plugins: [
+    { src: '@/plugins/aos', mode: 'client' },
+    { src: '@/plugins/onError', mode: 'client' },
+  ],
   devtools: { enabled: true },
   components: [
     // ~/calendar-module/components/event/Update.vue => <EventUpdate />

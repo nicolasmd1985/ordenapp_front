@@ -32,13 +32,13 @@
     router.push('/loginview');
   }
 
-  useGqlToken({
-    token: authStore.token,
-    config: {
-      type: 'Bearer',
-      name: 'Authorization'
-    }
-  })
+  // useGqlToken({
+  //   token: authStore.token,
+  //   config: {
+  //     type: 'Bearer',
+  //     name: 'Authorization'
+  //   }
+  // })
 
   const { data, error, pending, refresh } = await useAsyncGql({
     // variables: {email: this.email, pass: this.password},

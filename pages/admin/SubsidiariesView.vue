@@ -1,6 +1,8 @@
 <template>
   <!-- <ClientOnly> -->
-    <InfoValue/>
+    <InfoValue 
+      :items="items"
+    />
     <!-- <p>{{ authStore.token }}</p>
 
   </ClientOnly> -->
@@ -23,33 +25,26 @@
     router.push('/loginview');
   }
 
-  useGqlToken({
-    token: authStore.token,
-    config: {
-      type: 'Bearer',
-      name: 'Authorization'
-    }
-  })
 
   const { data, error, pending, refresh }  = await useAsyncGql({
     // variables: {email: this.email, pass: this.password},
     operation: 'Subsidiaries',
   });
 
+  const items = [];
 
   if (data.value != null) {
-    // debugger;
-    // data.value.subsidiaries.forEach((subsidiary) => {
-    //   items.push({
-    //     "subsidiary": subsidiary.subsidiary,
-    //     "phone": subsidiary.phone,
-    //     "address": subsidiary.address,
-    //     "email": subsidiary.email,
-    //     "initials": subsidiary.initials,
-    //     "enabled": subsidiary.enabled,
-    //     "options": subsidiary.options,
-    //   })
-    // });
+    data.value.subsidiaries.forEach((subsidiary) => {
+      items.push({
+        "subsidiary": subsidiary.name,
+        "phone": subsidiary.phone,
+        "address": subsidiary.address,
+        "email": subsidiary.email,
+        "initials": subsidiary.subsidiaryInitials,
+        "enabled": subsidiary.enabled,
+        "options": subsidiary.options,
+      })
+    });
   }  
 
   if (error.value) {
