@@ -162,9 +162,8 @@
             <li>
               <a
                 class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
-                href="#"
                 data-te-dropdown-item-ref
-                @click="SignOut"
+                @click="signOut"
                 >Sign Out</a
               >
             </li>
@@ -188,24 +187,15 @@
     initTE({ Collapse, Dropdown });
   });
 
-  // onMounted(async () => {
-  //   const { Collapse, Dropdown, initTE } = await import("tw-elements");
-  //   initTE({ Collapse, Dropdown });
-  // });
-
   import useAuthStore  from '~/store/authstore'
+  const router = useRouter();
   const authStore = useAuthStore();
 
   const signOut = () => {
+    authStore.userAuthentication = false;
+    authStore.token = '';
+    router.push('/loginview');
   }
-
-  // function signOut() {
-  //   authStore.userAuthentication = false;
-  // }
-
-
-
-
 
 
 </script>

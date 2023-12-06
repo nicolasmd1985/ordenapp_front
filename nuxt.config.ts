@@ -38,10 +38,25 @@ export default defineNuxtConfig({
     { path: '~/components/Landing' },
     '~/components'
   ],
-  runtimeConfig: {
-    public: {
-      GQL_HOST: 'http://localhost:3000/graphql' // overwritten by process.env.GQL_HOST
+  'graphql-client': {
+    tokenStorage: {
+      name: '__session',
+      mode: 'cookie', // default
+      cookieOptions: {
+        path: '/',
+        secure: false, // defaults to `process.env.NODE_ENV === 'production'`
+        httpOnly: false, // Only accessible via HTTP(S)
+        maxAge: 60 * 60 * 24 * 5 // 5 days
+      }
+    },
+    clients: {
+      default: {
+        // required
+        host: 'http://localhost:3000/graphql',
+      },
+
     }
   }
 
-})
+
+});

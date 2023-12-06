@@ -1,5 +1,5 @@
 <template>
-  <SubsidiaryCard/>
+  <SubsidiaryCard/> 
 </template>
 
 <script setup>

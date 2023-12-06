@@ -193,6 +193,9 @@
 
 
 <script >
+  definePageMeta({
+    layout: "default",
+  });
   import { useAuthStore } from '~/store/authstore'
   const store = useAuthStore();
   export default {

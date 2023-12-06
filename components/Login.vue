@@ -86,11 +86,13 @@
   });
 
   import useAuthStore from '~/store/authstore';
+
   const authStore = useAuthStore();
   const email = ref('');
   const password = ref('');
   const router = useRouter();
 
+  const token = useCookie('token');
 
 
   const submit = async () => {
@@ -99,7 +101,6 @@
 
     if (error.value) {
       // eslint-disable-next-line no-console
-      debugger;
 
 
     }
@@ -107,13 +108,16 @@
       // debugger;
       authStore.token = data.value.signIn.token;
       authStore.userAuthentication = true;
-      useGqlToken({
-        token: data.value.signIn.token,
-        config: {
-          type: 'Bearer',
-          name: 'Authorization'
-        }
-      });
+      // useGqlToken({
+      //   token: data.value.signIn.token,
+      //   config: {
+      //     type: 'Bearer',
+      //     name: 'Authorization'
+      //   }
+      // });
+      // router.push('/admin/profileview');
+      useCookie('token').value = data.value.signIn.token;
+
       router.push('/admin/profileview');
     }
     if (pending) {

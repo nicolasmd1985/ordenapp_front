@@ -18,30 +18,21 @@
     layout: "dashadmin",
   });
 
-  import useAuthStore from '~/store/authstore'
-  import useProfile from '~/store/profile'
 
+  import useProfile from '~/store/profile'
   import ProfileCard from '~/components/ProfileCard.vue';
+  import useAuthStore from '~/store/authstore'
   
-  const authStore = useAuthStore();
   const profile = useProfile();
   const router = useRouter();
+  const authStore = useAuthStore();
 
 
   if (!authStore.userAuthentication) {
     router.push('/loginview');
   }
 
-  // useGqlToken({
-  //   token: authStore.token,
-  //   config: {
-  //     type: 'Bearer',
-  //     name: 'Authorization'
-  //   }
-  // })
-
   const { data, error, pending, refresh } = await useAsyncGql({
-    // variables: {email: this.email, pass: this.password},
     operation: 'UserAdmin',
   });
 
@@ -54,7 +45,6 @@
   } 
   if (error.value) {
       // eslint-disable-next-line no-console
-      // debugger;
       console.log(error.value)
     }
 

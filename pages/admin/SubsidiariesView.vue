@@ -1,11 +1,7 @@
 <template>
-  <!-- <ClientOnly> -->
     <InfoValue 
       :items="items"
     />
-    <!-- <p>{{ authStore.token }}</p>
-
-  </ClientOnly> -->
 </template>
 
 
@@ -27,7 +23,6 @@
 
 
   const { data, error, pending, refresh }  = await useAsyncGql({
-    // variables: {email: this.email, pass: this.password},
     operation: 'Subsidiaries',
   });
 
@@ -48,10 +43,8 @@
   }  
 
   if (error.value) {
-      // eslint-disable-next-line no-console
-      // debugger;
-      console.log(error.value)
-    }
+    console.log(error.value)
+  }
 
 </script>
 

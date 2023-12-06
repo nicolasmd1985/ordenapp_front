@@ -25,6 +25,7 @@
   "dependencies": {
     "@pinia/nuxt": "^0.5.1",
     "aos": "^2.3.4",
+    "js-cookie": "^3.0.5",
     "nuxt-graphql-client": "^0.2.30",
     "pinia": "^2.1.7",
     "tw-elements": "^1.0.0",

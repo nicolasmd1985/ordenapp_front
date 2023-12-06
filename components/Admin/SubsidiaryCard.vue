@@ -7,7 +7,7 @@
       <div class="mb-4">
         <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
         <input 
-          v-model="name" 
+          :value="subsidiary_name"
           type="text" 
           id="name" 
           name="name" 
@@ -15,15 +15,23 @@
       </div>
       <div class="mb-4">
         <label for="address" class="block text-sm font-medium text-gray-700">Address</label>
-        <input v-model="address" type="text" id="address" name="address" class=" py-[0.32rem] p-3 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        <input :value="address" 
+        type="text" id="address" name="address" class=" py-[0.32rem] p-3 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
       </div>
       <div class="mb-4">
         <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
-        <input v-model="phone" type="text" id="phone" name="phone" class="py-[0.32rem] p-3 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        <input :value="phone"
+        type="text" id="phone" name="phone" class="py-[0.32rem] p-3 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
       </div>
       <div class="mb-4">
         <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-        <input v-model="email" type="text" id="email" name="email" class="py-[0.32rem] p-3 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        <input :value="email"
+        type="text" id="email" name="email" class="py-[0.32rem] p-3 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+      </div>
+      <div class="mb-4 hidden">
+        <label for="id_subsidary" class="block text-sm font-medium text-gray-700">Id Subsidiary</label>
+        <input :value="id_subsidary"
+        type="text" id="id_subsidary" name="id_subsidary" class="py-[0.32rem] p-3 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
       </div>
       <button 
         type="submit" 
@@ -39,50 +47,74 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
 
-const name = ref('');
-const address = ref('');
-const phone = ref('');
-const email = ref('');
+  const props = defineProps({
+    id_subsidary: {
+      type: String,
+      default: ''
+    },
+    subsidiary_name:{
+      type: String,
+      default: ''
+    },
+    address:{
+      type: String,
+      default: ''
+    },
+    phone:{
+      type: String,
+      default: ''
+    },
+    email:{
+      type: String,
+      default: ''
+    },
+    type:{
+      type: String,
+      default: 'create'
+    },
+  });
 
-import useAuthStore from '~/store/authstore';
-const authStore = useAuthStore();
 
-const router = useRouter();
-if (!authStore.userAuthentication) {
+  import useAuthStore from '~/store/authstore'
+  const router = useRouter();
+  const authStore = useAuthStore();
+  if (!authStore.userAuthentication) {
     router.push('/loginview');
   }
 
+  const submit = async () => {
+    const id_subsidary = document.getElementById('id_subsidary').value;
+    const subsidiary_name = document.getElementById('name').value;
+    const address = document.getElementById('address').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+    if (props.type == 'create') {
+      graphql('CreateSubsidiary', id_subsidary, subsidiary_name, address, phone, email)
+    } else {
+      graphql('UpdateSubsidiary', id_subsidary, subsidiary_name, address, phone, email)
+    }
+  };
 
-
-const submit = async () => {
-    // Perform create subsidiary logic here
-  // useGqlToken({
-  //   token: authStore.token,
-  //   config: {
-  //     type: 'Bearer',
-  //     name: 'Authorization'
-  //   }
-  // })
-    console.log('Creating subsidiary...');
-    const { data, error, pending, refresh } = await useAsyncGql('CreateSubsidiary', { 
-      name: name.value,
-      address: address.value,
-      phone: phone.value,
-      email: email.value
+  async function graphql(query, id_subsidary, subsidiary_name, address, phone, email) {
+    const { data, error, pending, refresh } = await useAsyncGql(query, {
+      id_subsidary: id_subsidary, 
+      name: subsidiary_name,
+      address: address,
+      phone: phone,
+      email: email
     });
 
     if (error.value) {
       console.log(error.value)
     }
     if (data.value) {
-      console.log('Created subsidiary!');
+      console.log(query);
       router.push('/admin/subsidiariesView');
 
     }
     if (pending) {
       
     }
-  };
+  }
 </script>
