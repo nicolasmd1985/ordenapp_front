@@ -1,14 +1,3 @@
-query Subsidiaries
-{
-    subsidiaries {
-        address
-        email
-        id
-        name
-        phone
-        subsidiaryInitials
-    }
-}
 
 query UserAdmin {
     userAdmin {

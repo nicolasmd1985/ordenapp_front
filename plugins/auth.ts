@@ -6,6 +6,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     // `client` can be used to differentiate logic on a per client basis.
 
     // apply client token
-    token.value = cookie_token.value as string
+    token.value = cookie_token.value as string 
+
   })
 })

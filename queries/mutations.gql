@@ -39,32 +39,3 @@ mutation UpdateAdminUser($firstName: String!, $lastName: String!) {
     }
 }
 
-mutation CreateSubsidiary($name: String!, $phone: String!, $address: String!, $email: String! )  {
-    createSubsidiary(
-      input: {
-        subsidiaryInput: {
-          name: $name
-          phone: $phone
-          address: $address
-          email: $email
-        }
-      }
-    ) {
-      errors
-        subsidiary {
-          address
-          email
-          id
-          name
-          phone
-          subsidiaryInitials
-          corporation {
-            address
-            email
-            id
-            name
-            phone
-          }
-        }
-    }
-}

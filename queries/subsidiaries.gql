@@ -1,0 +1,92 @@
+query Subsidiaries
+{
+    subsidiaries {
+        address
+        email
+        id
+        name
+        phone
+        subsidiaryInitials
+    }
+}
+query GetSubsidiary($id: ID!) {
+    getSubsidiary(id: $id) {
+        address
+        email
+        id
+        name
+        phone
+        subsidiaryInitials
+    }
+}
+
+mutation CreateSubsidiary($name: String!, $phone: String!, $address: String!, $email: String! )  {
+    createSubsidiary(
+      input: {
+        subsidiaryInput: {
+          name: $name
+          phone: $phone
+          address: $address
+          email: $email
+        }
+      }
+    ) {
+      errors
+        subsidiary {
+          address
+          email
+          id
+          name
+          phone
+          subsidiaryInitials
+          corporation {
+            address
+            email
+            id
+            name
+            phone
+          }
+        }
+    }
+}
+
+mutation UpdateSubsidiary($id: ID!, $name: String!, $phone: String!, $address: String!, $email: String! )  {
+    updateSubsidiary(
+      input: {
+        subsidiaryInput: {
+          id: $id
+          name: $name
+          phone: $phone
+          address: $address
+          email: $email
+        }
+      }
+    ) {
+      errors
+      subsidiary {
+        address
+        email
+        id
+        name
+        phone
+        subsidiaryInitials
+        corporation {
+          address
+          email
+          id
+          name
+          phone
+        }
+      }
+    }
+}
+
+mutation DeleteSubsidiary($id: ID!)  {
+    deleteSubsidiary(
+      input: {
+        id: $id
+      }
+    ) {
+      success
+    }
+}

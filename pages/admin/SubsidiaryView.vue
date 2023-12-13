@@ -5,7 +5,7 @@
     :address="subsidiary.address"
     :phone="subsidiary.phone"
     :email="subsidiary.email"
-    :type="type" 
+    :type="subsidiary.type" 
   />
 </template>
 
@@ -13,5 +13,10 @@
   definePageMeta({
     layout: "dashadmin",
   });
+  import useSubsidiary from '~/store/subsidiary';
+  const subsidiary = useSubsidiary();
+
+
+  
 </script>
 

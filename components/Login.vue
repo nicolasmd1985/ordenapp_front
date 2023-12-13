@@ -108,16 +108,12 @@
       // debugger;
       authStore.token = data.value.signIn.token;
       authStore.userAuthentication = true;
-      // useGqlToken({
-      //   token: data.value.signIn.token,
-      //   config: {
-      //     type: 'Bearer',
-      //     name: 'Authorization'
-      //   }
-      // });
-      // router.push('/admin/profileview');
       useCookie('token').value = data.value.signIn.token;
-
+      // expire token.value after 1 hourx
+      setTimeout(() => {
+        useCookie('token').value = '';
+        authStore.userAuthentication = false;
+      }, 1000 * 60 * 60); // 1 hour in milliseconds
       router.push('/admin/profileview');
     }
     if (pending) {

@@ -193,7 +193,7 @@
 
   const signOut = () => {
     authStore.userAuthentication = false;
-    authStore.token = '';
+    useCookie('token').value = '';
     router.push('/loginview');
   }
 

@@ -1,6 +1,6 @@
 <template>
-    <InfoValue 
-      :items="items"
+    <SubsidiariesData 
+      :subsidiary_data="items"
     />
 </template>
 
@@ -10,7 +10,6 @@
     layout: "dashadmin",
   });
 
-  import InfoValue from '~/components/InfoValue.vue';
 
   const router = useRouter();
 
@@ -37,7 +36,7 @@
         "email": subsidiary.email,
         "initials": subsidiary.subsidiaryInitials,
         "enabled": subsidiary.enabled,
-        "options": subsidiary.options,
+        "options": subsidiary.id,
       })
     });
   }  
