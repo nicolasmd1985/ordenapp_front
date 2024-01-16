@@ -1,0 +1,34 @@
+mutation CreateSupervisor($firstName: String!, $lastName: String!, $phoneNumber1: String! $email: String!, $subsidiaryId: String!) {
+    createSupervisor(
+        input: {
+            supervisorInput: {
+              firstName: $firstName
+              lastName: $lastName
+              phoneNumber1: $phoneNumber1
+              email: $email
+              subsidiaryId: $subsidiaryId
+            }
+        }
+    ) {
+        errors
+        user {
+            corporationId
+            email
+            firstName
+            id
+            lastName
+        }
+    }
+}
+
+query Supervisors
+{
+    supervisors{
+        id
+        firstName
+        lastName
+        phoneNumber1
+        email
+        subsidiary
+    }
+}

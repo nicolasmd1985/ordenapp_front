@@ -26,16 +26,3 @@ mutation SignUp($user: UserInput!, $password: String!) {
   }
 }
 
-mutation UpdateAdminUser($firstName: String!, $lastName: String!) {
-    updateAdminUser(input: { userInput: { firstName: $firstName, lastName: $lastName } }) {
-        errors
-        user {
-            corporationId
-            email
-            firstName
-            id
-            lastName
-        }
-    }
-}
-
