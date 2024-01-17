@@ -120,12 +120,11 @@
         subsidiaryId: subsidiary_name
       }, 
     });
-    if (data.value) {
-      debugger;
+    if (data.value && data.value.createSupervisor.errors.length == 0) {
       router.push({ path: '/admin/supervisorsview' });
     }
-    if (error.value) {
-      debugger;
+    if (error.value || data.value.createSupervisor.errors.length > 0) {
+      useNuxtApp().$toast.error(data.value.createSupervisor.errors);
       console.log(error.value)
     }
 
