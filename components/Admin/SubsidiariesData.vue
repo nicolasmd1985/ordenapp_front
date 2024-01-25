@@ -9,12 +9,18 @@
     :search-value="searchValue"
   >
     <template #item-options="{ options }" >
-      <div class="flex justify-center space-x-1">
+      <div class="flex space-x-1">
         <button
           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           @click="editItem(options)"
         >
           Edit
+        </button>
+        <button
+          class="bg-green-500 hover:bg-green-800 text-white font-bold py-2 px-4 rounded"
+          @click="supervision(options)"
+        >
+          Supervision
         </button>
         <button
           class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
@@ -75,6 +81,11 @@
     }
 
 
+  };
+
+  const supervision = async (option: any) => {
+    console.log("supervision", option);
+    router.push({ path: '/supervisor/technicalmap' });
   };
 
   const deleteItem = async (option: any) => {

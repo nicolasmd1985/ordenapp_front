@@ -11,7 +11,8 @@ export default defineNuxtConfig({
     // ...
     '@pinia/nuxt',
     'nuxt-graphql-client',
-    'nuxt-icon'
+    'nuxt-icon',
+    '@vueuse/nuxt',  
   ],
   app:{
     head: {
@@ -36,6 +37,7 @@ export default defineNuxtConfig({
     // ~/calendar-module/components/event/Update.vue => <EventUpdate />
     { path: '~/components/Admin' },
     { path: '~/components/Landing' },
+    { path: '~/components/Supervisor'},
     '~/components'
   ],
   'graphql-client': {

@@ -113,7 +113,7 @@
       setTimeout(() => {
         useCookie('token').value = '';
         authStore.userAuthentication = false;
-      }, 1000 * 60 * 60); // 1 hour in milliseconds
+      }, 1000 * 60 * 3); // 1 hour in milliseconds
       router.push('/admin/profileview');
     }
     if (pending) {
