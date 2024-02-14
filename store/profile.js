@@ -7,5 +7,6 @@ export default defineStore('profile', {
     lastName: 'Mahecha',
     avatar: '@/assets/images/logo-03.png',
     state: 'active'
-  })
+  }),
+  persist: true
 })

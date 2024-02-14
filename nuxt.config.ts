@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   modules: [
     // ...
     '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
     'nuxt-graphql-client',
     'nuxt-icon',
     '@vueuse/nuxt',  

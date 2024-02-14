@@ -1,0 +1,32 @@
+mutation CreateClient($firstName: String!, $lastName: String!, $phoneNumber1: String! $email: String!, $subsidiaryId: String!) {
+    createClient(
+        input: {
+            clientInput: {
+              firstName: $firstName
+              lastName: $lastName
+              phoneNumber1: $phoneNumber1
+              email: $email
+              subsidiaryId: $subsidiaryId
+            }
+        }
+    ) {
+        errors
+        user {
+            corporationId
+            email
+            firstName
+            id
+            lastName
+        }
+    }
+}
+
+query Clients($subsidiaryId: ID!) {
+    clients(subsidiaryId: $subsidiaryId) {
+        corporationId
+        email
+        firstName
+        id
+        lastName
+    }
+}

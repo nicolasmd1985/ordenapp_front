@@ -14,7 +14,7 @@
 
 <script setup>
   definePageMeta({
-    layout: "dashadmin",
+    layout: "dashsupervisor",
   });
 
   import { GoogleMap, Marker } from "vue3-google-map";

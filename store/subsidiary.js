@@ -9,5 +9,6 @@ export default defineStore('subsidiary', {
     phone: '',
     subsidiaryInitials: '',
     type: '',
-  })
+  }),
+  persist: true
 })

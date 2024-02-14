@@ -32,8 +32,6 @@
     router.push('/loginview');
   }
 
-  debugger;
-
 
   const { data, error, pending, refresh } = await useAsyncGql({
     operation: 'UserAdmin',

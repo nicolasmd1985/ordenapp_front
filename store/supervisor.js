@@ -8,5 +8,6 @@ export default defineStore('supervisor', {
     phone: '',
     subsidiary: '',
     type: '',
-  })
+  }),
+  persist: true
 })

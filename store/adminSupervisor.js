@@ -1,8 +1,8 @@
 import {defineStore} from 'pinia'
 
-export default defineStore('authstore', {
+export default defineStore('admin_supervisor', {
   state: () => ({
-    userAuthentication: false 
+    subsidiaryId: '' 
   }),
   persist: true
 
