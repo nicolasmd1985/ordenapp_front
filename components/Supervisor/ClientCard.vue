@@ -121,7 +121,6 @@
       router.push({ path: '/supervisor/clientsview' });
     }
     if (error.value || data.value.createClient.errors.length > 0) {
-      debugger;
       useNuxtApp().$toast.error(data.value.createClient.errors);
       console.log(error.value)
     }

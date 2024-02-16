@@ -3,10 +3,12 @@ import {defineStore} from 'pinia';
 export default defineStore('supervisor', {
   state: () => ({
     id_supervisor: '',
-    full_name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     phone: '',
-    subsidiary: '',
+    subsidiary_name: '',
+    subsidiary_id: '',
     type: '',
   }),
   persist: true

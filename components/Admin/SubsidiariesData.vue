@@ -88,7 +88,6 @@
   const supervision = async (option: any) => {
     console.log("supervision", option);
     adminSupervisor.subsidiaryId = option || '';
-
     router.push({ path: '/supervisor/technicalmap' });
   };
 

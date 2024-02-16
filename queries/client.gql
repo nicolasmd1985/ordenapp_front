@@ -25,6 +25,7 @@ query Clients($subsidiaryId: ID!) {
     clients(subsidiaryId: $subsidiaryId) {
         corporationId
         email
+        phoneNumber1
         firstName
         id
         lastName

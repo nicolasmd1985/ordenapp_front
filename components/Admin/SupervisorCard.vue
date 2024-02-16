@@ -28,9 +28,9 @@
         <input :value="email"
         type="text" id="email" name="email" class="py-[0.32rem] p-3 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
       </div>
-      <div class="mb-4">
+      <div class="mb-4" id="select_subsidiary">
         <label for="subsidiary_name" class="block text-sm font-medium text-gray-700">Subsidiary Name</label>
-        <select id="subsidiary_name" name="subsidiary_name" class="py-[0.32rem] p-3 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        <select v-model="selectedSubsidiary" id="subsidiary_name" name="subsidiary_name" class="py-[0.32rem] p-3 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
           <option v-for="subsidiary in subsidiary_name" :key="subsidiary.id" :value="subsidiary.id">{{ subsidiary.name }}</option>
         </select>
       </div>
@@ -78,6 +78,10 @@
     subsidiary_name:{
       type: Array,
       default: []
+    },
+    subsidiary_id:{
+      type: String,
+      default: ''
     },
     type:{
       type: String,
@@ -129,4 +133,9 @@
     }
 
   }
+
+  const subsidiary_n = props.subsidiary_id;
+  const selectedSubsidiary = ref(subsidiary_n);
+
+
 </script>

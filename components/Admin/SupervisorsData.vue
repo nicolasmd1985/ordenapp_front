@@ -59,18 +59,20 @@
   const editItem = async (option: any) => {
     console.log("editItem", option);
     const { data, error, pending, refresh }  = await useAsyncGql({ 
-      operation: 'Supervisors',
-      variables: { id: option }, 
+      operation: 'GetSupervisor',
+      variables: { supervisorId: option }, 
     });
-    if (data.value) {
-      // supervisor.id_supervisor = data.value.supervisors || '';
-      // subsidiary.full_name = data.value.getSubsidiary.nam || '';
-      // subsidiary.address = data.value.getSubsidiary.address || '';
-      // subsidiary.email = data.value.getSubsidiary.email || '';
-      // subsidiary.phone = data.value.getSubsidiary.phone || '';
-      // subsidiary.subsidiaryInitials = data.value.getSubsidiary.subsidiaryInitials || '';
-      // subsidiary.type = 'edit';
-      router.push({ path: '/admin/subsidiaryview' });
+    if (data.value.getSupervisor !== null && data.value.getSupervisor !== undefined) {
+      supervisor.id_supervisor = data.value.getSupervisor.id || '';
+      supervisor.firstName = data.value.getSupervisor.firstName || '';
+      supervisor.lastName = data.value.getSupervisor.lastName || '';
+      supervisor.phone = data.value.getSupervisor.phoneNumber1 || '';
+      supervisor.email = data.value.getSupervisor.email || '';
+      supervisor.subsidiary_name = data.value.getSupervisor.subsidiary || '';
+      supervisor.subsidiary_id = data.value.getSupervisor.subsidiaryId || '';
+      supervisor.type = 'edit';
+      
+      router.push({ path: '/admin/supervisorview' });
     }
   };
 

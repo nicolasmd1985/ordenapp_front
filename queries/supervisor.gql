@@ -1,3 +1,27 @@
+query Supervisors
+{
+    supervisors{
+        id
+        firstName
+        lastName
+        phoneNumber1
+        email
+        subsidiary
+    }
+}
+
+query GetSupervisor($supervisorId: ID!) {
+    getSupervisor(supervisorId: $supervisorId) {
+        id
+        firstName
+        lastName
+        phoneNumber1
+        email
+        subsidiary
+        subsidiaryId
+    }
+}
+
 mutation CreateSupervisor($firstName: String!, $lastName: String!, $phoneNumber1: String! $email: String!, $subsidiaryId: String!) {
     createSupervisor(
         input: {
@@ -21,14 +45,27 @@ mutation CreateSupervisor($firstName: String!, $lastName: String!, $phoneNumber1
     }
 }
 
-query Supervisors
-{
-    supervisors{
-        id
-        firstName
-        lastName
-        phoneNumber1
-        email
-        subsidiary
+mutation UpdateSupervisor($id: ID!, $firstName: String!, $lastName: String!, $phoneNumber1: String!, $email: String!, $subsidiaryId: String!) {
+    updateSupervisor(
+        input: {
+            supervisorInput: {
+              id: $id
+              firstName: $firstName
+              lastName: $lastName
+              phoneNumber1: $phoneNumber1
+              email: $email
+              subsidiaryId: $subsidiaryId
+              }
+        }
+    ){
+        errors
+        supervisor {
+            corporationId
+            email
+            firstName
+            id
+            lastName
+        }
+
     }
 }
