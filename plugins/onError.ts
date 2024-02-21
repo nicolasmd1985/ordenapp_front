@@ -12,6 +12,7 @@ export default defineNuxtPlugin(() => {
         })
       }
     }
+    useNuxtApp().$toast.error(err.gqlErrors[0].message);
 
     // Handle different error cases
     const tokenExpired = err.gqlErrors.some(e => e.message.includes('id-token-expired'))
