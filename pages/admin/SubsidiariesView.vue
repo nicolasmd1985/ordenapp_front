@@ -14,7 +14,9 @@
   const router = useRouter();
 
   import useAuthStore from '~/store/authstore'
+  import useSubsidiaries from '~/store/subsidiaries'
   const authStore = useAuthStore();
+  const subsidiaries = useSubsidiaries();
 
   if (!authStore.userAuthentication) {
     router.push('/loginview');
@@ -28,6 +30,7 @@
   const items = [];
 
   if (data.value != null) {
+    subsidiaries.subsidiaries = data.value.subsidiaries;
     data.value.subsidiaries.forEach((subsidiary) => {
       items.push({
         "subsidiary": subsidiary.name,

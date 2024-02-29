@@ -129,7 +129,8 @@
       router.push({ path: '/admin/supervisorsview' });
     }
     if (error.value || (data.value.createSupervisor?.errors.length > 0 || data.value.updateSupervisor?.errors.length > 0)) {
-      useNuxtApp().$toast.error(data.value.createSupervisor.errors);
+      // useNuxtApp().$toast.error(data.value.createSupervisor.errors);
+      useNuxtApp().$toast.error(data.value.createSupervisor?.errors || data.value.updateSupervisor?.errors);
       console.log(error.value)
     }
 

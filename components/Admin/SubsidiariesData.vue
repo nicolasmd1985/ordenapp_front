@@ -38,9 +38,11 @@
   import type { Header, Item } from "vue3-easy-data-table";
   import useSubsidiary from "~/store/subsidiary";
   import useAdminSupervisor from "~/store/adminSupervisor";
+  import useSubsidiaries from "~/store/subsidiaries";
   
 
   const subsidiary = useSubsidiary();
+  const subsidiaries = useSubsidiaries();
   const adminSupervisor = useAdminSupervisor();
   const router = useRouter();
   const searchField = ["subsidiary", "phone", "address", "email", "initials", "options"];
@@ -86,7 +88,7 @@
   };
 
   const supervision = async (option: any) => {
-    console.log("supervision", option);
+    console.log(subsidiaries.subsidiaries);
     adminSupervisor.subsidiaryId = option || '';
     router.push({ path: '/supervisor/technicalmap' });
   };

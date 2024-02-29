@@ -35,16 +35,32 @@
 
       </div>
 
+      <!-- Subsidiary Name -->
+      <div class="flex items-center">
+        <div class="flex items-center">
+          <span class="text-lg font-bold text-secondary-500 ml-2">{{ subsidiary_name }}</span>          
+        </div>
+      </div>
+
       <!-- Right elements -->
       <div class="relative flex items-center">
         <!-- Admin Icon -->
-        <a
-          class="mr-4 text-secondary-500 transition duration-200 hover:text-secondary-400 hover:ease-in-out focus:text-secondary-400 disabled:text-black/30 motion-reduce:transition-none"
-          href="#">
-          <!-- Admin icon -->
-          <i class="fa fa-home"></i>
-        </a>
-
+        <NuxtLink to="/admin/subsidiariesview">
+          <a
+            class="mr-4 text-secondary-500 transition duration-200 hover:text-secondary-400 hover:ease-in-out focus:text-secondary-400 disabled:text-black/30 motion-reduce:transition-none"
+            >
+            <!-- Admin icon -->
+            <i class="fa fa-home"></i>
+          </a>
+        </NuxtLink>
+        <NuxtLink to="/supervisor/technicalmap">
+          <a
+            class="mr-4 text-secondary-500 transition duration-200 hover:text-secondary-400 hover:ease-in-out focus:text-secondary-400 disabled:text-black/30 motion-reduce:transition-none"
+            >
+            <!-- Admin icon -->
+            <i class="fa fa-map"></i>
+          </a>
+        </NuxtLink>
         <!-- Container with two dropdown menus -->
         <div
           class="relative"
@@ -179,9 +195,20 @@
     initTE({ Collapse, Dropdown });
   });
 
-  import useAuthStore  from '~/store/authstore'
+  import useAuthStore  from '~/store/authstore';
+  import useSubsidiaries from '~/store/subsidiaries';
+  import useAdminSupervisor from '~/store/adminSupervisor';
   const router = useRouter();
   const authStore = useAuthStore();
+  const subsidiaries = useSubsidiaries();
+  const adminSupervisor = useAdminSupervisor();
+
+  let subsidiaryId = adminSupervisor.subsidiaryId;
+  let subsidiary_name = subsidiaries.subsidiaries.find(subsidiary => subsidiary.id === subsidiaryId).name;
+
+
+
+
 
   const signOut = () => {
     authStore.userAuthentication = false;

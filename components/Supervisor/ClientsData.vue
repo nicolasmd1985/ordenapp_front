@@ -30,10 +30,10 @@
 
 <script setup lang="ts">
   import type { Header, Item } from "vue3-easy-data-table";
-  import useAdminSupervisor from "~/store/adminSupervisor";
+  import useClient from "~/store/client";
   
 
-  const adminSupervisor = useAdminSupervisor();
+  const client = useClient();
   const router = useRouter();
   const searchField = ["full_name", "phone", "email", "subsidiary", "options"];
   const searchValue = ref("");
@@ -58,18 +58,16 @@
   const editItem = async (option: any) => {
     console.log("editItem", option);
     const { data, error, pending, refresh }  = await useAsyncGql({ 
-      operation: 'Supervisors',
-      variables: { id: option }, 
+      operation: 'GetClient',
+      variables: { clientId: option }, 
     });
     if (data.value) {
-      // supervisor.id_supervisor = data.value.supervisors || '';
-      // subsidiary.full_name = data.value.getSubsidiary.nam || '';
-      // subsidiary.address = data.value.getSubsidiary.address || '';
-      // subsidiary.email = data.value.getSubsidiary.email || '';
-      // subsidiary.phone = data.value.getSubsidiary.phone || '';
-      // subsidiary.subsidiaryInitials = data.value.getSubsidiary.subsidiaryInitials || '';
-      // subsidiary.type = 'edit';
-      router.push({ path: '/admin/subsidiaryview' });
+      client.id_client = data.value.getClient.id || '';
+      client.firstName = data.value.getClient.firstName || '';
+      client.lastName = data.value.getClient.lastName || '';
+      client.phone = data.value.getClient.phoneNumber1 || '';
+      client.email = data.value.getClient.email || '';
+      router.push({ path: '/supervisor/clientview'});
     }
   };
 

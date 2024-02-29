@@ -31,3 +31,39 @@ query Clients($subsidiaryId: ID!) {
         lastName
     }
 }
+
+query GetClient($clientId: ID!) {
+    getClient(clientId: $clientId) {
+        id
+        firstName
+        lastName
+        phoneNumber1
+        email
+        subsidiary
+        subsidiaryId
+    }
+}
+
+mutation UpdateClient($id: ID!, $firstName: String!, $lastName: String!, $phoneNumber1: String!, $email: String!, $subsidiaryId: String!) {
+    updateClient(
+        input: {
+            clientInput: {
+              id: $id
+              firstName: $firstName
+              lastName: $lastName
+              phoneNumber1: $phoneNumber1
+              email: $email
+              subsidiaryId: $subsidiaryId
+              }
+        }
+    ) {
+        errors
+        client {
+            corporationId
+            email
+            firstName
+            id
+            lastName
+        }
+    }
+}
